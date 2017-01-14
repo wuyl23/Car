@@ -1,3 +1,4 @@
 /vendor/
 Runtime
 Application/Common/Conf/config.php
+node_modules
