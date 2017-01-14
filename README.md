@@ -6,3 +6,9 @@
 
 	mysql -u root
 	source carsearch.sql
+
+
+**前端文件**
+
+	sudo apt-get install npm
+	npm install
