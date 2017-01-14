@@ -1,4 +1,10 @@
-desc <table_name>
+set names utf8;
+drop database carsearch;
+create database carsearch character set utf8;
+use carsearch;
+
+
+# table
 CREATE TABLE `carsearch_fygg` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(50) DEFAULT NULL comment '发布时间',
@@ -6,4 +12,4 @@ CREATE TABLE `carsearch_fygg` (
   `value` varchar(255) DEFAULT NULL comment '公告内容',
   `courtname` varchar(255) DEFAULT NULL comment '法院名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
