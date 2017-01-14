@@ -1,2 +1,3 @@
 /vendor/
 Runtime
+Application/Common/Conf/config.php
