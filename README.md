@@ -12,3 +12,10 @@
 
 	sudo apt-get install npm
 	npm install
+
+
+**数据导入**
+
+	sudo apt-get install python3 python3-pip
+	pip install --upgrade pip
+	pip3 install --user -r requirements.txt
