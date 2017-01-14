@@ -1,5 +1,4 @@
 desc <table_name>
-show create table carsearch_fygg;
 CREATE TABLE `carsearch_fygg` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(50) DEFAULT NULL comment '发布时间',
