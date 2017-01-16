@@ -18,6 +18,19 @@
 
 	sudo apt-get install python3-pip
 	pip3 install --upgrade pip
+	pip3 install requests lxml pymysql
+
+	cd py
+	根据mysql配置修改py/Mysql.py密码
+	python3 download.py
+
+
+
+
+
+
+
+
 	pip3 install --user -r requirements.txt
 
 # 测试#
