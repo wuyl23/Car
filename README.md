@@ -16,6 +16,6 @@
 
 **数据导入**
 
-	sudo apt-get install python3-pip
+	sudo apt-get install python3 -pip
 	pip3 install --upgrade pip
 	pip3 install --user -r requirements.txt
