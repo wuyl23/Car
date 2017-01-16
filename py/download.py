@@ -22,11 +22,11 @@ def start():
 			print(e)
 		htm=etree.HTML(val)
 		value=htm.xpath('//*[@class="b_title"]/text()')[0]
-		fytime=htm.xpath('//*[@class="sth_a"]/span[1]/text()')[0]
+		fytime=htm.xpath('//*[@class="sth_a"]/span[1]/text()')[0].replace('"','')
+		fytime=fytime.split('：')[1].strip()
 		fyname=re.findall(r'，([\w\W]*?)法院',value)[0]+"法院"
-
-
-		sql='instert into fygg(date,title,value,courtname)values("%s","%s","%s","%s")'%(fytime,title[x],value,fyname)
+		sql='insert into carsearch_fygg(date,title,value,courtname)values("%s","%s","%s","%s")'%(fytime,title[x],value,fyname)
+		print(sql)
 		mysql=MySQL()
 		if mysql.query(sql):
 			print('ok!')
