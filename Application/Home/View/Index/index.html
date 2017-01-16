@@ -7,19 +7,43 @@
 	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<style type="text/css">
-		.table.table-bordered{
-			width: 800px;
+		ul{list-style: none}
+		.cont{
+			text-align: center;
+			max-width: 800px;
 			margin: 30px auto;
+		}
+		.table.table-bordered{
+			text-align: left;
+		}
+		.table.table-bordered thead tr{
+			background-color: #ccc;
+		}
+		.table.table-bordered tbody tr:nth-child(2n){
+			background-color: #eee;
+		}
+		.tbul{
+			overflow: hidden;
+			display: inline-block;
+			margin: 30px auto;
+			padding-left: 0;
+		}
+		.tbul li{
+			float: left;
+			padding: 2px 5px;
+			border: 1px solid #666;
+			margin-left: 3px;
+			cursor: pointer;
 		}
 		
 	</style>
 </head>
 <body>
 
-	
+	<div class="cont">
 	<table class="table table-bordered">
 	  <caption>边框表格布局</caption>
-	  <thead id="vo">
+	  <thead>
 	    <tr>
 	      <th>标题</th>
 	      <th>发布日期</th>
@@ -38,8 +62,15 @@
          </volist>
 	  </tbody>
 	</table>
-
-
+  <ul class="tbul">
+			<li>上一页</li>
+			<li>1</li>
+			<li>2</li>
+			<li>...</li>
+			<li>6</li>
+			<li>下一页</li>
+		</ul>
+</div>
 </body>
 </html>
 <script type="text/javascript">
