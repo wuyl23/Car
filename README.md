@@ -16,6 +16,13 @@
 
 **数据导入**
 
+<<<<<<< fcc359ba9ad9d6097f15bf17e0fd1a58d567a2d0
 	sudo apt-get install python3-pip
 	pip3 install --upgrade pip
 	pip3 install --user -r requirements.txt
+=======
+	sudo apt-get install python3 python3-pip
+	pip install --upgrade pip
+	pip3 install --user -r requirements.txt
+	python3 download.py
+>>>>>>> 最后修改
