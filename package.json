@@ -1,7 +1,7 @@
 {
   "name": "car",
   "version": "1.0.0",
-  "description": "",
+  "description": "1.如果要连接数据库，需要將./Application/Common/Conf/config.php.example 文件名稱修改爲 config.php",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
