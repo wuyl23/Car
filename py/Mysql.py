@@ -8,7 +8,7 @@ class MySQL(object):
     def __init__(self):
         """MySQL Database initialization """
         #try:
-        self.conn = pymysql.connect(host='127.0.0.1', user='root', passwd='', db='carsearch', charset='utf8')
+        self.conn = pymysql.connect(host='127.0.0.1', user='root', passwd='root', db='carsearch', charset='utf8')
         print(self.conn)
         #except MySQLdb.Error as e:
         #errormsg = 'Cannot connect to server\nERROR (%s): %s' % (e.args[0], e.args[1])
