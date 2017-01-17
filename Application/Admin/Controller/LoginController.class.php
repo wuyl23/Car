@@ -22,6 +22,7 @@ class LoginController extends Controller
          $this->success('登录成功...','Index/index');
       } else {
          $this->error('登录失败，请重新登录。');
+
       }
     }
 }
