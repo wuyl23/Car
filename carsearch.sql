@@ -13,3 +13,11 @@ CREATE TABLE `carsearch_fygg` (
   `courtname` varchar(255) DEFAULT NULL comment '法院名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `carsearch_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL comment '管理员名称',
+  `password` int(255) DEFAULT NULL comment '密码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

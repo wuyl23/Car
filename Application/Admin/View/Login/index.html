@@ -33,10 +33,10 @@
             
     <div class="form-main">
     	<div class="tishi">管理员登录</div>
-        <form class="form_signup" action="" method="">
+        <form class="form_signup" action="{:U('login')}" method="post">
             <div class="form-group fg_mstyle">
                 <label for="login" >用户名</label>
-                <input type="text" nema="username" id="login" class="form-control" placeholder="请输入手机号或邮箱">
+                <input type="text" name="username" id="login" class="form-control" placeholder="请输入手机号或邮箱">
             </div>
             <div class="fg_mstyle">
                 <label for="password">密码</label>
