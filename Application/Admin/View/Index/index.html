@@ -1,80 +1,239 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>后台登录</title>
+ 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="../../../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<style type="text/css">
-		ul{list-style: none}
-		.cont{
-			text-align: center;
-			max-width: 800px;
-			margin: 30px auto;
+		ul{
+			list-style: none;
 		}
-		.table.table-bordered{
-			text-align: left;
+		textarea{
+			resize: none;
 		}
-		.table.table-bordered thead tr{
+		.view-cot{
+			max-width: 1140px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.title-t{
+			overflow: hidden;
+			padding: 20px 40px;
 			background-color: #ccc;
 		}
-		.table.table-bordered tbody tr:nth-child(2n){
-			background-color: #eee;
+		.title-t p{
+			font-size: 20px;
+			color: #333;
+			float: right;
 		}
-		.tbul{
-			overflow: hidden;
-			display: inline-block;
-			margin: 30px auto;
-			padding-left: 0;
+		.table{
+			border: 1px solid #ccc;
 		}
-		.tbul li{
+		.view-ul{
+			width: 15%;
+			height: 600px;
 			float: left;
-			padding: 2px 5px;
-			border: 1px solid #666;
-			margin-left: 3px;
-			cursor: pointer;
+			padding: 40px 0;
 		}
-		
-	</style>
-</head>
-<body>
+		.view-ul li{
+			background-color: #fff;
+			font-size: 18px;
+			line-height: 36px;
+			color: #333;
+			text-align: center;
+		}
+		.v-form{
+			float: left;
+			margin-top: 40px;
+			min-height: 600px;
+			background-color: #fff;
+			width: 85%;
+			padding-left: 1%;
+		}
+		.view-tab{
+			overflow: hidden;
+			background-color: #eee;
 
-	<div class="cont">
-	<table class="table table-bordered">
-	  <caption>边框表格布局</caption>
-	  <thead>
-	    <tr>
-	      <th>标题</th>
-	      <th>发布日期</th>
-	      <th>公告内容</th>
-	      <th>法院名称</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	     <volist name="list" id="vo">
-	    <tr>
-	    	<td>{$vo.title}</td>
-	    	<td>{$vo.date}</td>
-	    	<td>{$vo.value}</td>
-	    	<td>{$vo.courtname}</td>
-	    </tr>
-         </volist>
-	  </tbody>
-	</table>
-  <ul class="tbul">
-			<li>上一页</li>
-			<li>1</li>
-			<li>2</li>
-			<li>.......</li>
-			<li>5</li>
-			<li>下一页</li>
-		</ul>
-</div>
-</body>
-</html>
-<script type="text/javascript">
-	$(function(){
-       
-	})
-</script>
+		}
+		.alert-t,.alert-t2{
+			width: 400px;
+			min-height: 300px;
+			margin: 0 auto;
+			background-color: #ddd;
+			position: absolute;
+			left: 50%;
+			margin-left: -200px;
+			top: 20%;
+			padding: 20px 50px;
+      z-index: 2;
+		}
+		.hhide{
+			display: none;
+		}
+    .form-vv{
+      margin-bottom: 20px;
+    }
+		.form-vv p{
+			text-align: center;
+			line-height: 40px;
+			font-size: 20px;
+		}
+    .form-vv label{
+      margin-top: 18px;
+    }
+    #btn-b{
+      margin-left: 60px;
+    }
+    .bg-body{
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+	</style>
+ </head>
+ <body>
+    <div class="view-cot">
+    	<div class="title-t">
+    		<p>用户张三</p>
+    	</div>
+    	<div class="view-tab">
+    		<ul class="view-ul">
+    			<li>用户信息</li>
+    		</ul>
+    		<div class="v-form">
+    			<table class="table table-bordered">
+				  <thead>
+				    <tr>
+              <th>ID</th>
+				      <th>标题</th>
+				      <th>发布日期</th>
+				      <th>公告内容</th>
+				      <th>法院名称</th>
+				      <th></th>
+				    </tr>
+				  </thead>
+				  <tbody id="tbody">
+				    <tr>
+              <td>1</td>
+				    	<td>法院</td>
+				    	<td>2017-1-17
+              </td>
+				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td>法院名称法院名称法院名称法院名称</td>
+				    	<td><button>删除</button><button>修改</button></td>
+				    </tr>
+				    <tr>
+				    	<td>2</td>
+              <td>法院</td>
+				    	<td>2017-1-17</td>
+				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td>法院名称法院名称法院名称法院名称</td>
+				    	<td><button>删除</button><button>修改</button></td>
+				    </tr>
+				    <tr>
+				    	<td>3</td>
+              <td>法院</td>
+				    	<td>2017-1-17</td>
+				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td>法院名称法院名称法院名称法院名称</td>
+				    	<td><button class="delte-v">删除</button><button  class='change-bt'>修改</button></td>
+				    </tr>
+				  </tbody>
+				</table>
+
+				  <button class="but-right btn btn-primary">新增</button>
+    		</div>
+    	</div>
+      <!-- 新增 -->
+    	<div class="alert-t hhide">
+    		<form class="form-horizontal form-vv" role="form">
+		    	<p>新增</p>
+		    	<label>标题</label>
+		    	<input type="text" name="" class="form-control"  id="in1">
+		    	<label>发布日期</label>
+		    	<input type="text" name="" class="form-control" id="in2">
+		    	<label>公告内容</label>
+		    	<input type="text" name="" class="form-control" id="in3">
+		    	<label>法院名称</label>
+		    	<input type="text" name="" class="form-control" id="in4">
+	    	</form>
+	    	<button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary">保存</button>
+	    </div>
+    </div>
+    <!-- 修改 -->
+    <div class="alert-t2  hhide">
+      <form class="form-horizontal form-vv" role="form">
+        <p>修改</p>
+        <label>标题</label>
+        <input type="text" name="" class="form-control"  id="in1">
+        <label>发布日期</label>
+        <input type="text" name="" class="form-control" id="in2">
+        <label>公告内容</label>
+        <input type="text" name="" class="form-control" id="in3">
+        <label>法院名称</label>
+        <input type="text" name="" class="form-control" id="in4">
+      </form>
+      <button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary">保存</button>
+    </div>
+  </div>
+<div class="bg-body hhide"></div>
+ </body>
+ </html>
+ <script type="text/javascript">
+ 	$(function(){
+ 		$(".but-right").click(function(event) {
+			$(".alert-t").removeClass("hhide");
+      $('.bg-body').removeClass('hhide')
+		});
+ 		$(window).click(function(event) {
+			//alert(11)
+		});
+    $('#btn-b').click(function(event) {
+      var in1 = $('#in1').val();
+      var in2 = $('#in2').val();
+      var in3 = $('#in3').val();
+      var in4 = $('#in4').val();
+      var tr = $('<tr></tr>');
+      $('#tbody').append(tr);
+      var td = $('<td></td>');
+      tr.append(td);
+      var td = $('<td></td>');
+      tr.append(td);
+      td.append(in1);
+      var td = $('<td></td>');
+      tr.append(td);
+      td.append(in2);
+      var td = $('<td></td>');
+      tr.append(td);
+      td.append(in3);
+      var td = $('<td></td>');
+      tr.append(td);
+      td.append(in4);
+      var td = $('<td><button class="delte-v">删除</button><button class="change-bt">修改</button></td>');
+      tr.append(td);
+      $('.alert-t').addClass('hhide');
+      $('.bg-body').addClass('hhide')
+    });
+    $('#tbody').on('click','.change-bt', function(event) {
+      $(".alert-t2").removeClass("hhide");
+      $('.bg-body').removeClass('hhide')
+    });
+    $('.clos-v').click(function(event) {
+      $('.alert-t').addClass('hhide');
+      $('.alert-t2').addClass('hhide');
+      $('.bg-body').addClass('hhide')
+    });
+    $('#tbody').on('click', '.delte-v', function(event) {
+      var flag = window.confirm("您确定要删除这个用户吗？");
+      if (!flag) {
+        return false;
+      };
+      $(this).parents('#tbody tr').remove();
+    });
+ 	})
+ </script>
