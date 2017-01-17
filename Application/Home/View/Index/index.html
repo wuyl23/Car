@@ -68,13 +68,28 @@
 			<li>2</li>
 			<li>.......</li>
 			<li>5</li>
-			<li>下一页</li>
+			<li id="list">下一页</li>
 		</ul>
 </div>
 </body>
-</html>
 <script type="text/javascript">
 	$(function(){
-       
+		alert(1)
+		$.ajax({
+			type: "POST",
+               url: "http://127.0.0.1:8080/home/Index/get",
+               data:{
+               },
+			   dataType:'json',
+               success:function(ret){
+               		alert(JSON.stringify(ret));
+               },
+               error:function(err){
+               		alert(err)
+               }
+		})
+
 	})
+
 </script>
+</html>
