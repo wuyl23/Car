@@ -119,28 +119,27 @@
 				  </thead>
 				  <tbody id="tbody">
 				    <tr>
-              <td>1</td>
-				    	<td>法院</td>
-				    	<td>2017-1-17
-              </td>
-				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
-				    	<td>法院名称法院名称法院名称法院名称</td>
-				    	<td><button>删除</button><button>修改</button></td>
+              <td class="td1">1</td>
+				    	<td class="td2">法院</td>
+				    	<td class="td3">2017-1-17</td>
+				    	<td class="td4">公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td class="td5">法院名称法院名称法院名称法院名称</td>
+				    	<td><button>删除</button><button class='change-bt'>修改</button></td>
 				    </tr>
 				    <tr>
-				    	<td>2</td>
-              <td>法院</td>
-				    	<td>2017-1-17</td>
-				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
-				    	<td>法院名称法院名称法院名称法院名称</td>
-				    	<td><button>删除</button><button>修改</button></td>
+				    	<td class="td1">2</td>
+              <td class="td2">法院</td>
+				    	<td class="td3">2017-1-17</td>
+				    	<td class="td4">公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td class="td5">法院名称法院名称法院名称法院名称</td>
+				    	<td><button>删除</button><button class='change-bt'>修改</button></td>
 				    </tr>
 				    <tr>
-				    	<td>3</td>
-              <td>法院</td>
-				    	<td>2017-1-17</td>
-				    	<td>公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
-				    	<td>法院名称法院名称法院名称法院名称</td>
+				    	<td class="td1">3</td>
+              <td class="td2">法院</td>
+				    	<td class="td3">2017-1-17</td>
+				    	<td class="td4">公告内容公告内容公告内容公告内容公告内容公告内容公告内容</td>
+				    	<td class="td5">法院名称法院名称法院名称法院名称</td>
 				    	<td><button class="delte-v">删除</button><button  class='change-bt'>修改</button></td>
 				    </tr>
 				  </tbody>
@@ -153,81 +152,120 @@
     	<div class="alert-t hhide">
     		<form class="form-horizontal form-vv" role="form">
 		    	<p>新增</p>
+          <div style="">
+            <label>id</label>
+            <input type="text" name="" class="form-control"  id="in10">
+          </div>
 		    	<label>标题</label>
-		    	<input type="text" name="" class="form-control"  id="in1">
+		    	<input type="text" name="" class="form-control" id="in11">
 		    	<label>发布日期</label>
-		    	<input type="text" name="" class="form-control" id="in2">
+		    	<input type="date" name="" class="form-control" id="in21">
 		    	<label>公告内容</label>
-		    	<input type="text" name="" class="form-control" id="in3">
+		    	<input type="text" name="" class="form-control" id="in31">
 		    	<label>法院名称</label>
-		    	<input type="text" name="" class="form-control" id="in4">
+		    	<input type="text" name="" class="form-control" id="in41">
 	    	</form>
-	    	<button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary">保存</button>
+	    	<button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary ">保存</button>
 	    </div>
     </div>
     <!-- 修改 -->
     <div class="alert-t2  hhide">
       <form class="form-horizontal form-vv" role="form">
         <p>修改</p>
+        <div style="">
+          <label>id</label>
+          <input type="text" name="" class="form-control"  id="in0">
+        </div>
         <label>标题</label>
         <input type="text" name="" class="form-control"  id="in1">
         <label>发布日期</label>
-        <input type="text" name="" class="form-control" id="in2">
+        <input type="date" name="" class="form-control" id="in2">
         <label>公告内容</label>
         <input type="text" name="" class="form-control" id="in3">
         <label>法院名称</label>
         <input type="text" name="" class="form-control" id="in4">
       </form>
-      <button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary">保存</button>
+      <button class="clos-v btn btn-primary">关闭</button><button id="btn-b" class="btn btn-primary xiugai">保存</button>
     </div>
   </div>
 <div class="bg-body hhide"></div>
  </body>
  </html>
  <script type="text/javascript">
+
  	$(function(){
+    //新增按钮
  		$(".but-right").click(function(event) {
 			$(".alert-t").removeClass("hhide");
       $('.bg-body').removeClass('hhide')
 		});
- 		$(window).click(function(event) {
-			//alert(11)
-		});
+    //新增的保存
     $('#btn-b').click(function(event) {
-      var in1 = $('#in1').val();
-      var in2 = $('#in2').val();
-      var in3 = $('#in3').val();
-      var in4 = $('#in4').val();
+      var in0 = $('#in10').val();
+      var in1 = $('#in11').val();
+      var in2 = $('#in21').val();
+      var in3 = $('#in31').val();
+      var in4 = $('#in41').val();
       var tr = $('<tr></tr>');
       $('#tbody').append(tr);
-      var td = $('<td></td>');
+      var td = $('<td class="td1"></td>');
       tr.append(td);
-      var td = $('<td></td>');
+      td.append(in0);
+      var td = $('<td class="td2"></td>');
       tr.append(td);
       td.append(in1);
-      var td = $('<td></td>');
+      var td = $('<td class="td3"></td>');
       tr.append(td);
       td.append(in2);
-      var td = $('<td></td>');
+      var td = $('<td class="td4"></td>');
       tr.append(td);
       td.append(in3);
-      var td = $('<td></td>');
+      var td = $('<td class="td5"></td>');
       tr.append(td);
       td.append(in4);
       var td = $('<td><button class="delte-v">删除</button><button class="change-bt">修改</button></td>');
       tr.append(td);
       $('.alert-t').addClass('hhide');
-      $('.bg-body').addClass('hhide')
+      $('.bg-body').addClass('hhide');
     });
+    //修改按钮
     $('#tbody').on('click','.change-bt', function(event) {
       $(".alert-t2").removeClass("hhide");
-      $('.bg-body').removeClass('hhide')
+      $('.bg-body').removeClass('hhide');
+      var num = $(this).parents('#tbody tr').index();
+      $('#in0').val($('.td1').eq(num).text());
+      $('#in1').val($('.td2').eq(num).text());
+      $('#in2').val($('.td3').eq(num).text());
+      $('#in3').val($('.td4').eq(num).text());
+      $('#in4').val($('.td5').eq(num).text());
+      // alert($('.td1').eq(num).text());
+
     });
+
+    //修改保存
+    var ids =1;
+    $('.xiugai').click(function(){
+      var ids=$('#in0').val();
+      tt(ids)
+    })
+    function tt(ids) {
+      $('.alert-t').addClass('hhide');
+      $('.alert-t2').addClass('hhide');
+      $('.bg-body').addClass('hhide');
+      alert(ids);
+      $('.td2').eq(ids).text($('#in1').val());
+      $('.td3').eq(ids).text($('#in2').val());
+      $('.td4').eq(ids).text($('#in3').val());
+      $('.td5').eq(ids).text($('#in4').val());
+      return tt;
+    };
+    //关闭按钮
     $('.clos-v').click(function(event) {
       $('.alert-t').addClass('hhide');
       $('.alert-t2').addClass('hhide');
       $('.bg-body').addClass('hhide')
     });
+    //删除按钮
     $('#tbody').on('click', '.delte-v', function(event) {
       var flag = window.confirm("您确定要删除这个用户吗？");
       if (!flag) {
