@@ -172,7 +172,7 @@
     <div class="alert-t2  hhide">
       <form class="form-horizontal form-vv" role="form">
         <p>修改</p>
-        <div style="">
+        <div style="display:none">
           <label>id</label>
           <input type="text" name="" class="form-control"  id="in0">
         </div>
@@ -201,32 +201,38 @@
 		});
     //新增的保存
     $('#btn-b').click(function(event) {
+
       var in0 = $('#in10').val();
       var in1 = $('#in11').val();
       var in2 = $('#in21').val();
       var in3 = $('#in31').val();
       var in4 = $('#in41').val();
-      var tr = $('<tr></tr>');
-      $('#tbody').append(tr);
-      var td = $('<td class="td1"></td>');
-      tr.append(td);
-      td.append(in0);
-      var td = $('<td class="td2"></td>');
-      tr.append(td);
-      td.append(in1);
-      var td = $('<td class="td3"></td>');
-      tr.append(td);
-      td.append(in2);
-      var td = $('<td class="td4"></td>');
-      tr.append(td);
-      td.append(in3);
-      var td = $('<td class="td5"></td>');
-      tr.append(td);
-      td.append(in4);
-      var td = $('<td><button class="delte-v">删除</button><button class="change-bt">修改</button></td>');
-      tr.append(td);
-      $('.alert-t').addClass('hhide');
-      $('.bg-body').addClass('hhide');
+      if (in1!==''&&in2!==''&&in3!==''&&in4!=='') {
+        var tr = $('<tr></tr>');
+        $('#tbody').append(tr);
+        var td = $('<td class="td1"></td>');
+        tr.append(td);
+        td.append(in0);
+        var td = $('<td class="td2"></td>');
+        tr.append(td);
+        td.append(in1);
+        var td = $('<td class="td3"></td>');
+        tr.append(td);
+        td.append(in2);
+        var td = $('<td class="td4"></td>');
+        tr.append(td);
+        td.append(in3);
+        var td = $('<td class="td5"></td>');
+        tr.append(td);
+        td.append(in4);
+        var td = $('<td><button class="delte-v">删除</button><button class="change-bt">修改</button></td>');
+        tr.append(td);
+        $('.alert-t').addClass('hhide');
+        $('.bg-body').addClass('hhide');
+      }else {
+        alert('不能为空');
+      }
+
     });
     //修改按钮
     $('#tbody').on('click','.change-bt', function(event) {
@@ -243,16 +249,14 @@
     });
 
     //修改保存
-    var ids =1;
     $('.xiugai').click(function(){
-      var ids=$('#in0').val();
+      var ids=$('#in0').val()-1;
       tt(ids)
     })
     function tt(ids) {
       $('.alert-t').addClass('hhide');
       $('.alert-t2').addClass('hhide');
       $('.bg-body').addClass('hhide');
-      alert(ids);
       $('.td2').eq(ids).text($('#in1').val());
       $('.td3').eq(ids).text($('#in2').val());
       $('.td4').eq(ids).text($('#in3').val());
